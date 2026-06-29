@@ -17,7 +17,7 @@ const STATIC_STATS = [
   { value: '4', label: 'Certifications' },
 ]
 
-const primarySkills = ['Python', 'Flask', 'FastAPI', 'JavaScript', 'PostgreSQL', 'Docker']
+const primarySkills = ['Python', 'Flask', 'FastAPI', 'JavaScript', 'WordPress', 'MySQL']
 const secondarySkills = ['React', 'TypeScript', 'PowerShell', 'Linux', 'Git']
 
 export function Home() {
@@ -124,7 +124,7 @@ export function Home() {
         {[
           { icon: Server, title: 'Backend & APIs', desc: 'REST APIs with Python (Flask, FastAPI), JWT auth, async patterns, and PostgreSQL.' },
           { icon: Code2, title: 'Full-Stack Dev', desc: 'Frontend with React & TypeScript paired with solid server-side foundations.' },
-          { icon: Shield, title: 'IT Security', desc: 'Monitoring, automation scripts, user provisioning, and vulnerability assessment.' },
+          { icon: Shield, title: 'Web & Hosting', desc: 'WordPress development, cPanel administration, SSL setup, performance tuning, and security hardening.' },
         ].map(({ icon: Icon, title, desc }) => (
           <Card key={title} className="hover:border-[var(--color-primary)]/40 hover:-translate-y-1 cursor-default">
             <CardHeader>

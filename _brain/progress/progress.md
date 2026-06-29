@@ -8,7 +8,7 @@
 Vite 8 + React 19 + TypeScript + Tailwind v4 + shadcn-style components + React Router v7
 
 ## Active Task
-> Audit fixes — see A01–A05 below
+> None — select from backlog
 
 ---
 
@@ -35,10 +35,10 @@ Vite 8 + React 19 + TypeScript + Tailwind v4 + shadcn-style components + React R
 ## Audit Backlog (found 2026-06-30)
 | ID | Issue | Location | Priority |
 |----|-------|----------|----------|
-| A03 | Home "What I do" — IT Security card (Shield) no longer current role, replace with Web/WordPress card | Home.tsx | HIGH |
-| A04 | Home primary skills — missing WordPress, which is now a core daily skill | Home.tsx | HIGH |
-| A05 | index.html meta description still says generic Vite app, update to real portfolio description | index.html | MEDIUM |
-| A06 | Home Navbar logo "IT" initials — consider making it full name or styled monogram | Navbar.tsx | LOW |
+| A03 | Home "What I do" — IT Security → Web & Hosting card (WordPress, cPanel, SSL, perf) | 2026-06-30 |
+| A04 | Home primary skills — replaced Docker/PostgreSQL with WordPress/MySQL | 2026-06-30 |
+| A05 | index.html meta + og description updated to Full-Stack Web Developer | 2026-06-30 |
+| A06 | Navbar "IT" logo — LOW, deferred | — |
 | B02 | Dark/light theme toggle | — | LOW |
 | B03 | Deploy to Vercel/GitHub Pages for live URL | — | DEFERRED |
 | B04 | Contact form | — | DEFERRED |
