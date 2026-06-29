@@ -68,7 +68,7 @@ export function Home() {
               Ian Tolentino
             </h1>
             <p className="mt-1 text-lg text-[var(--color-primary)] font-medium">
-              Backend Developer & IT Security Engineer
+              Full-Stack Web Developer
             </p>
           </div>
 
@@ -78,9 +78,9 @@ export function Home() {
           </div>
 
           <p className="text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
-            I build robust APIs, server-side systems, and automation tools with a focus on
-            clean, maintainable code. Currently working as an IT Security Engineer at{' '}
-            <span className="text-[var(--color-foreground)] font-medium">Nanox Philippines</span>.
+            I build full-stack web applications, REST APIs, and automation tools with a focus on
+            clean, maintainable code. Currently working as a Web Developer at{' '}
+            <span className="text-[var(--color-foreground)] font-medium">Strata Staff Global</span>.
           </p>
 
           <div className="flex flex-wrap gap-2">

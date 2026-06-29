@@ -36,8 +36,8 @@ export function About() {
             and collaboration to deliver solutions that are both functional and easy to understand.
           </p>
           <p className="text-[var(--color-muted-foreground)] leading-relaxed border-l-2 border-[var(--color-border)] pl-4">
-            Beyond development, I work as an IT Security Engineer, bridging the gap between software engineering
-            and system security — monitoring infrastructure, automating operations, and keeping critical systems available.
+            Currently working as a Web Developer at <span className="text-[var(--color-foreground)] font-semibold">Strata Staff Global</span> —
+            handling full-stack development, WordPress, cPanel administration, and keeping production systems running smoothly.
           </p>
         </div>
 

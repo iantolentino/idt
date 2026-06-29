@@ -8,7 +8,7 @@
 Vite 8 + React 19 + TypeScript + Tailwind v4 + shadcn-style components + React Router v7
 
 ## Active Task
-> None — select from backlog
+> Audit fixes — see A01–A05 below
 
 ---
 
@@ -27,15 +27,21 @@ Vite 8 + React 19 + TypeScript + Tailwind v4 + shadcn-style components + React R
 | B05 | Home featured projects — real GitHub data, top 3 by stars+forks, cards clickable | 2026-06-30 |
 | B06 | Skills: replaced % bars with icon+name pill chips, 3-col grid, added Web & Hosting category | 2026-06-30 |
 | B07 | Experience: added Strata Staff Global (Jun 2026–Present), fixed Nanox dates Jun 2025–Jun 2026 | 2026-06-30 |
+| A01 | Home title + bio: "Full-Stack Web Developer" at Strata Staff Global (was Nanox IT Security) | 2026-06-30 |
+| A02 | About third paragraph: updated to reflect Strata Staff role (removed IT Security Engineer ref) | 2026-06-30 |
 
 ---
 
-## Backlog
-| ID | Task | Priority |
-|----|------|----------|
-| B02 | Dark/light theme toggle | LOW |
-| B03 | Deploy to Vercel/GitHub Pages for live URL | DEFERRED |
-| B04 | Contact form | DEFERRED |
+## Audit Backlog (found 2026-06-30)
+| ID | Issue | Location | Priority |
+|----|-------|----------|----------|
+| A03 | Home "What I do" — IT Security card (Shield) no longer current role, replace with Web/WordPress card | Home.tsx | HIGH |
+| A04 | Home primary skills — missing WordPress, which is now a core daily skill | Home.tsx | HIGH |
+| A05 | index.html meta description still says generic Vite app, update to real portfolio description | index.html | MEDIUM |
+| A06 | Home Navbar logo "IT" initials — consider making it full name or styled monogram | Navbar.tsx | LOW |
+| B02 | Dark/light theme toggle | — | LOW |
+| B03 | Deploy to Vercel/GitHub Pages for live URL | — | DEFERRED |
+| B04 | Contact form | — | DEFERRED |
 
 ---
 
