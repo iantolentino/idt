@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Mail, ArrowRight, Code2, Server, Shield,
@@ -7,8 +8,9 @@ import { GithubIcon, LinkedinIcon } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import { fetchGitHubStats, type GitHubStats } from '@/lib/github'
 
-const stats = [
+const STATIC_STATS = [
   { value: '70+', label: 'Projects' },
   { value: '1+', label: 'Years Exp.' },
   { value: '25+', label: 'Technologies' },
@@ -43,6 +45,21 @@ const featuredProjects = [
 ]
 
 export function Home() {
+  const [liveStats, setLiveStats] = useState<GitHubStats | null>(null)
+
+  useEffect(() => {
+    fetchGitHubStats().then(setLiveStats)
+  }, [])
+
+  const stats = liveStats
+    ? [
+        { value: `${liveStats.repos}`, label: 'Projects' },
+        { value: '1+', label: 'Years Exp.' },
+        { value: `${liveStats.languages}`, label: 'Technologies' },
+        { value: '4', label: 'Certifications' },
+      ]
+    : STATIC_STATS
+
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 space-y-12">
 
