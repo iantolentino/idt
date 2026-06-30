@@ -2,14 +2,6 @@ import { Briefcase, GraduationCap, Trophy, MapPin, Calendar } from 'lucide-react
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-block rounded-full border border-[var(--color-primary)]/25 bg-[var(--color-primary)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--color-primary)]">
-      {children}
-    </span>
-  )
-}
-
 const timeline = [
   {
     icon: Briefcase,
@@ -43,6 +35,7 @@ const timeline = [
       'Implemented automation scripts for bulk user provisioning and reporting',
       'Created Radmin automation for server monitoring and maintenance',
       'Led in-house training sessions improving Office productivity and reducing repetitive support tickets',
+      'Identified and reported recurring web application errors, improving internal system reliability',
     ],
   },
   {
@@ -59,6 +52,7 @@ const timeline = [
       'Installed and configured CCTV systems for security monitoring',
       'Organized large digital archives and implemented efficient data management systems',
       'Assisted in inventory management and maintained e-commerce backends',
+      'Developed automation tools to streamline IT operations',
     ],
   },
   {
@@ -94,60 +88,49 @@ const timeline = [
   },
 ]
 
-const nodeColors: Record<string, string> = {
-  work: 'border-[var(--color-primary)] bg-[var(--color-primary)]/10',
-  education: 'border-purple-400 bg-purple-400/10',
-  achievement: 'border-amber-400 bg-amber-400/10',
-}
-
-const diamondColors: Record<string, string> = {
-  work: 'border-[var(--color-primary)]',
-  education: 'border-purple-400',
-  achievement: 'border-amber-400',
+const iconColors: Record<string, string> = {
+  work: 'text-[var(--color-primary)] bg-[var(--color-primary)]/10',
+  education: 'text-purple-400 bg-purple-400/10',
+  achievement: 'text-amber-400 bg-amber-400/10',
 }
 
 export function Experience() {
   return (
-    <div className="mx-auto max-w-4xl px-4 sm:px-6 py-10 space-y-10">
-
-      <div className="text-center space-y-3">
-        <SectionLabel>Journey</SectionLabel>
-        <h1 className="text-3xl sm:text-4xl font-bold text-[var(--color-foreground)] tracking-tight">Experience</h1>
-        <p className="text-[var(--color-muted-foreground)] text-sm">
-          My professional journey and the milestones along the way
-        </p>
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold text-[var(--color-foreground)] tracking-tight">Expertise & Journey</h1>
+        <p className="mt-1 text-[var(--color-muted-foreground)]">Professional experience and education</p>
       </div>
 
-      <div className="relative space-y-0">
-        {/* Vertical line */}
-        <div className="absolute left-[9px] sm:left-5 top-3 bottom-3 w-px bg-[var(--color-border)]" />
+      <div className="relative space-y-6">
+        <div className="absolute left-5 top-0 bottom-0 w-px bg-[var(--color-border)] hidden sm:block" />
 
-        {timeline.map((item, i) => {
+        {timeline.map((item) => {
           const Icon = item.icon
           return (
-            <div key={item.title + item.company} className="relative flex gap-5 pb-8 last:pb-0">
-              {/* Diamond node */}
-              <div className="relative z-10 shrink-0 flex items-start pt-5">
-                <div className={`h-[18px] w-[18px] rotate-45 border-2 ${diamondColors[item.type]} bg-[var(--color-background)]`} />
+            <div key={item.title + item.company} className="flex gap-5">
+              <div className="relative z-10 hidden sm:flex shrink-0">
+                <div className={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--color-border)] ${iconColors[item.type]}`}>
+                  <Icon size={18} />
+                </div>
               </div>
 
-              {/* Card */}
-              <Card className={`flex-1 hover:border-[var(--color-primary)]/30 transition-all duration-200 ${item.current ? 'border-[var(--color-primary)]/40' : ''}`}>
+              <Card className={`flex-1 hover:border-[var(--color-primary)]/30 ${item.current ? 'border-[var(--color-primary)]/40' : ''}`}>
                 <CardHeader>
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <CardTitle className="flex flex-wrap items-center gap-2 text-base">
+                      <CardTitle className="flex items-center gap-2 text-base">
                         {item.title}
                         {item.current && <Badge variant="success" className="text-[10px]">Current</Badge>}
                       </CardTitle>
-                      <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-sm text-[var(--color-muted-foreground)]">
-                        <span className="flex items-center gap-1"><Briefcase size={12} /> {item.company}</span>
-                        {item.location && <span className="flex items-center gap-1"><MapPin size={12} /> {item.location}</span>}
-                        <span className="flex items-center gap-1"><Calendar size={12} /> {item.period}</span>
+                      <div className="mt-1 flex flex-wrap gap-3 text-sm text-[var(--color-muted-foreground)]">
+                        <span className="flex items-center gap-1"><Briefcase size={13} /> {item.company}</span>
+                        {item.location && <span className="flex items-center gap-1"><MapPin size={13} /> {item.location}</span>}
+                        <span className="flex items-center gap-1"><Calendar size={13} /> {item.period}</span>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
-                      {item.tags.map(t => (
+                      {item.tags.map((t) => (
                         <Badge key={t} variant="secondary" className="text-[10px]">{t}</Badge>
                       ))}
                     </div>
@@ -155,9 +138,9 @@ export function Experience() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {item.achievements.map(a => (
-                      <li key={a} className="flex gap-2.5 text-sm text-[var(--color-muted-foreground)]">
-                        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                    {item.achievements.map((a) => (
+                      <li key={a} className="flex gap-2 text-sm text-[var(--color-muted-foreground)]">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--color-primary)]" />
                         {a}
                       </li>
                     ))}
@@ -168,7 +151,6 @@ export function Experience() {
           )
         })}
       </div>
-
     </div>
   )
 }
