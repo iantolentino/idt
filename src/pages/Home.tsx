@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Mail, ArrowRight, Code2, Server, Shield,
-  Star, GitFork, ExternalLink, MapPin, Calendar, FolderOpen, Globe,
+  Star, GitFork, ExternalLink, MapPin, Calendar, FolderOpen,
 } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/icons'
 import { Button } from '@/components/ui/button'
@@ -84,7 +84,7 @@ export function Home() {
     <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 space-y-12">
 
       {/* Hero — browser frame */}
-      <section className="rounded-2xl border border-[var(--color-border)] overflow-hidden shadow-2xl">
+      <section className="rounded-2xl border border-[var(--color-border)] overflow-hidden shadow-[8px_8px_0px_var(--color-primary)]">
         {/* Browser chrome */}
         <div className="flex items-center gap-2 bg-[var(--color-secondary)] px-4 py-3 border-b border-[var(--color-border)]">
           <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
