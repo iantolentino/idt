@@ -151,13 +151,28 @@ export function Projects() {
               <CardContent className="flex-1 px-4 pb-2">
                 <div className="flex flex-wrap gap-1.5">
                   <Badge variant="default" className="text-[10px]">{proj.language}</Badge>
-                  <Badge variant="secondary" className="text-[10px]">{proj.category}</Badge>
+                  {proj.category !== proj.language && (
+                    <Badge variant="secondary" className="text-[10px]">{proj.category}</Badge>
+                  )}
+                  {proj.homepage && (
+                    <Badge variant="success" className="text-[10px]">Live</Badge>
+                  )}
                 </div>
               </CardContent>
               <CardFooter className="px-4 pb-3 text-xs text-[var(--color-muted-foreground)]">
                 <span className="flex items-center gap-1"><Star size={12} /> {proj.stars}</span>
                 <span className="flex items-center gap-1 ml-3"><GitFork size={12} /> {proj.forks}</span>
                 <span className="ml-auto text-[10px]">{proj.updated}</span>
+                {proj.homepage && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="ml-2 h-7 px-2 text-xs text-[var(--color-success)]"
+                    onClick={(e) => { e.stopPropagation(); window.open(proj.homepage!, '_blank', 'noopener,noreferrer') }}
+                  >
+                    <ExternalLink size={13} /> Live
+                  </Button>
+                )}
                 <Button
                   variant="ghost"
                   size="sm"
