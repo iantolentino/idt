@@ -15,7 +15,6 @@ const FILTERS: { key: FilterKey; label: string }[] = [
   { key: 'web-apps', label: 'Web Apps' },
   { key: 'python', label: 'Python' },
   { key: 'desktop', label: 'Desktop' },
-  { key: 'extensions', label: 'Extensions' },
   { key: 'automation', label: 'Automation' },
   { key: 'utilities', label: 'Utilities' },
 ]
