@@ -8,6 +8,7 @@ export interface Project {
   name: string
   description: string
   url: string
+  homepage: string | null
   stars: number
   forks: number
   language: string
@@ -30,6 +31,7 @@ interface RawRepo {
   name: string
   description: string | null
   html_url: string
+  homepage: string | null
   stargazers_count: number
   forks_count: number
   language: string | null
@@ -134,14 +136,14 @@ function categorizeProject(repo: RawRepo): { category: Category; categoryClass: 
 
 function getFallbackProjects(): Project[] {
   return [
-    { name: 'Room Temperature Monitoring Tool', description: 'Enterprise-grade application for server room monitoring', url: 'https://github.com/iantolentino/Room-Temp-Monitoring-Tool', stars: 2, forks: 1, language: 'Python', updated: 'Mar 2024', category: 'Automation', categoryClass: 'automation' },
-    { name: 'Axon', description: 'Comprehensive personal productivity application', url: 'https://github.com/iantolentino/Axon', stars: 3, forks: 2, language: 'JavaScript', updated: 'Feb 2024', category: 'Web Apps', categoryClass: 'web-apps' },
-    { name: 'Password Vault', description: 'Secure password manager with encryption', url: 'https://github.com/iantolentino/Password-Vault', stars: 4, forks: 1, language: 'Python', updated: 'Jan 2024', category: 'Desktop', categoryClass: 'desktop' },
-    { name: 'QR Code Attendance Scanner', description: 'Desktop app for QR code attendance tracking', url: 'https://github.com/iantolentino/QRCode-Attendance-Scanner', stars: 4, forks: 2, language: 'Python', updated: 'Dec 2023', category: 'Desktop', categoryClass: 'desktop' },
-    { name: 'Daily Motivational Quotes', description: 'Chrome extension for motivational quotes', url: 'https://github.com/iantolentino/daily-motivational-quotes', stars: 3, forks: 0, language: 'JavaScript', updated: 'Sep 2023', category: 'Extensions', categoryClass: 'extensions' },
-    { name: 'File Organizer', description: 'Command-line tool to organize files', url: 'https://github.com/iantolentino/File-Organizer', stars: 5, forks: 3, language: 'Python', updated: 'Aug 2023', category: 'Utilities', categoryClass: 'utilities' },
-    { name: 'Ephemeral Chat', description: 'Peer-to-peer chat using WebRTC', url: 'https://github.com/iantolentino/Ephemeral', stars: 3, forks: 1, language: 'JavaScript', updated: 'Jul 2023', category: 'Web Apps', categoryClass: 'web-apps' },
-    { name: 'Generative UI Builder', description: 'Natural language to UI converter', url: 'https://github.com/iantolentino/generative-ui-builder', stars: 4, forks: 2, language: 'JavaScript', updated: 'Jun 2023', category: 'Web Apps', categoryClass: 'web-apps' },
+    { name: 'Room Temperature Monitoring Tool', description: 'Enterprise-grade application for server room monitoring', url: 'https://github.com/iantolentino/Room-Temp-Monitoring-Tool', homepage: null, stars: 2, forks: 1, language: 'Python', updated: 'Mar 2024', category: 'Automation', categoryClass: 'automation' },
+    { name: 'Axon', description: 'Comprehensive personal productivity application', url: 'https://github.com/iantolentino/Axon', homepage: null, stars: 3, forks: 2, language: 'JavaScript', updated: 'Feb 2024', category: 'Web Apps', categoryClass: 'web-apps' },
+    { name: 'Password Vault', description: 'Secure password manager with encryption', url: 'https://github.com/iantolentino/Password-Vault', homepage: null, stars: 4, forks: 1, language: 'Python', updated: 'Jan 2024', category: 'Desktop', categoryClass: 'desktop' },
+    { name: 'QR Code Attendance Scanner', description: 'Desktop app for QR code attendance tracking', url: 'https://github.com/iantolentino/QRCode-Attendance-Scanner', homepage: null, stars: 4, forks: 2, language: 'Python', updated: 'Dec 2023', category: 'Desktop', categoryClass: 'desktop' },
+    { name: 'Daily Motivational Quotes', description: 'Chrome extension for motivational quotes', url: 'https://github.com/iantolentino/daily-motivational-quotes', homepage: null, stars: 3, forks: 0, language: 'JavaScript', updated: 'Sep 2023', category: 'Extensions', categoryClass: 'extensions' },
+    { name: 'File Organizer', description: 'Command-line tool to organize files', url: 'https://github.com/iantolentino/File-Organizer', homepage: null, stars: 5, forks: 3, language: 'Python', updated: 'Aug 2023', category: 'Utilities', categoryClass: 'utilities' },
+    { name: 'Ephemeral Chat', description: 'Peer-to-peer chat using WebRTC', url: 'https://github.com/iantolentino/Ephemeral', homepage: null, stars: 3, forks: 1, language: 'JavaScript', updated: 'Jul 2023', category: 'Web Apps', categoryClass: 'web-apps' },
+    { name: 'Generative UI Builder', description: 'Natural language to UI converter', url: 'https://github.com/iantolentino/generative-ui-builder', homepage: null, stars: 4, forks: 2, language: 'JavaScript', updated: 'Jun 2023', category: 'Web Apps', categoryClass: 'web-apps' },
   ]
 }
 
@@ -233,6 +235,7 @@ export async function fetchGitHubProjects(): Promise<Project[]> {
         name: repo.name,
         description: repo.description || 'No description available',
         url: repo.html_url,
+        homepage: repo.homepage || null,
         stars: repo.stargazers_count || 0,
         forks: repo.forks_count || 0,
         language: repo.language || 'Other',
