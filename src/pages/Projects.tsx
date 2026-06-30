@@ -77,7 +77,7 @@ export function Projects() {
                   'px-3 py-1.5 text-sm font-medium transition-all duration-150 flex items-center gap-1.5',
                   active === key
                     ? 'bg-[var(--color-primary)] text-[var(--color-primary-foreground)]'
-                    : 'bg-[var(--color-secondary)] text-[var(--color-muted-foreground)] border-2 border-[var(--color-border)] hover:border-[var(--color-primary)]/60 hover:text-[var(--color-foreground)]'
+                    : 'bg-[var(--color-card)] text-[var(--color-foreground)] border-2 border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]'
                 )}
               >
                 {label}
@@ -87,7 +87,7 @@ export function Projects() {
                       'px-1.5 py-0.5 text-[10px] font-bold leading-none',
                       active === key
                         ? 'bg-[var(--color-primary-foreground)]/20 text-[var(--color-primary-foreground)]'
-                        : 'bg-[var(--color-border)] text-[var(--color-muted-foreground)]'
+                        : 'bg-[var(--color-border)] text-[var(--color-foreground)]'
                     )}
                   >
                     {count}
